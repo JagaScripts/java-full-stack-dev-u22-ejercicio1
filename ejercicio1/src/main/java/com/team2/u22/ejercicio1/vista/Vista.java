@@ -1,4 +1,4 @@
-package vista;
+package com.team2.u22.ejercicio1.vista;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
