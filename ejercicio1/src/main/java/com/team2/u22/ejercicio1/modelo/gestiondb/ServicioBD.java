@@ -9,13 +9,16 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
- * java-full-stack-dev-u18 - modelo.gestiondb - servicioBD
+ * 
+ * ejercicio1 - com.team2.u22.ejercicio1.modelo.gestiondb - ServicioBD
  *
+ * @author Daniel Fernández Cacho
+ * @author Joan Hurtado García
  * @author Jose Antonio González Alcántara
  * 
- * Fecha de creación 29/04/2022
+ * Fecha de creación 10/05/2022
  */
-public class ServicioBD{
+public class ServicioBD implements IObjetoAccesoDatos{
 	
 	private Connection conexion;
 	
@@ -33,7 +36,7 @@ public class ServicioBD{
 		this.setConexion(conexion);
 	}
 
-
+	@Override
 	public void usarBaseDatos(String nombreBaseDatos) {
 	
 		String queryDb = "USE " + nombreBaseDatos + ";";
@@ -53,12 +56,12 @@ public class ServicioBD{
 
 	
 	
-
-	public void crearRegistro(String nombreBaseDatos, String tabla, Object registros) {
+	@Override
+	public void crearRegistro(String nombreBaseDatos, String tabla, String registros) {
 		
 		try {
 			// Database use statement
-			String consultaCrearRegistros = "INSERT INTO " + tabla + " VALUES " + registros.toString() + ";";
+			String consultaCrearRegistros = "INSERT INTO " + tabla + " VALUES " + registros + ";";
 			this.ejecutarConsulta(consultaCrearRegistros, nombreBaseDatos);
 
 		} catch (Exception e) {
@@ -68,7 +71,7 @@ public class ServicioBD{
 		
 	}
 
-
+	@Override
 	public String leerTablaBaseDatos(String nombreBaseDatos, String tabla, int numeroAtributos) {
 		String resultadoConsulta = "";
 		try {
@@ -102,7 +105,7 @@ public class ServicioBD{
 		
 	}
 
-
+	@Override
 	public void actualizarRegistro(String nombreBaseDatos, String tabla, String atributo, String identificador) {
 		try {
 			// Database use statement
@@ -117,7 +120,7 @@ public class ServicioBD{
 		
 	}
 	
-
+	@Override
 	public void eliminarRegistro(String nombreBaseDatos, String tabla, String identificador) {
 		
 		try {
