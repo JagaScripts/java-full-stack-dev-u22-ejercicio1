@@ -25,19 +25,19 @@ import java.awt.Font;
 public class Vista extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
-	private JTextField textField_6;
-	private JTextField textField_7;
-	private JTextField textField_8;
-	private JTextField textField_9;
-	private JTextField textField_10;
-	private JTextField textField_11;
-	private JTextField textField_12;
+	private JTextField idCUTextField;
+	private JTextField nombreCUTextField;
+	private JTextField apellidoCUTextField;
+	private JTextField direccionCUTextField;
+	private JTextField dniCUTextField;
+	private JTextField fechaCUTextField;
+	private JTextField idAUTextField;
+	private JTextField nombreAUTextField;
+	private JTextField apellidoAUTextField;
+	private JTextField direccionAUTextField;
+	private JTextField dniAUTextField;
+	private JTextField fechaAUTextField;
+	private JTextField idBUTextField;
 
 	/**
 	 * Launch the application.
@@ -71,10 +71,10 @@ public class Vista extends JFrame {
 		contentPane.add(panelCrear);
 		panelCrear.setLayout(null);
 		
-		textField = new JTextField();
-		textField.setBounds(44, 52, 54, 20);
-		panelCrear.add(textField);
-		textField.setColumns(10);
+		idCUTextField = new JTextField();
+		idCUTextField.setBounds(44, 52, 54, 20);
+		panelCrear.add(idCUTextField);
+		idCUTextField.setColumns(10);
 		
 		JLabel lblNewLabel = new JLabel("Id:");
 		lblNewLabel.setBounds(20, 55, 25, 14);
@@ -84,50 +84,50 @@ public class Vista extends JFrame {
 		lblNewLabel_1.setBounds(108, 55, 61, 14);
 		panelCrear.add(lblNewLabel_1);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(179, 52, 122, 20);
-		panelCrear.add(textField_1);
-		textField_1.setColumns(10);
+		nombreCUTextField = new JTextField();
+		nombreCUTextField.setBounds(179, 52, 122, 20);
+		panelCrear.add(nombreCUTextField);
+		nombreCUTextField.setColumns(10);
 		
 		JLabel lblNewLabel_2 = new JLabel("Apellido:");
 		lblNewLabel_2.setBounds(10, 83, 56, 14);
 		panelCrear.add(lblNewLabel_2);
 		
-		textField_2 = new JTextField();
-		textField_2.setBounds(65, 80, 86, 20);
-		panelCrear.add(textField_2);
-		textField_2.setColumns(10);
+		apellidoCUTextField = new JTextField();
+		apellidoCUTextField.setBounds(65, 80, 86, 20);
+		panelCrear.add(apellidoCUTextField);
+		apellidoCUTextField.setColumns(10);
 		
 		JLabel lblNewLabel_3 = new JLabel("Direccion:");
 		lblNewLabel_3.setBounds(167, 83, 61, 14);
 		panelCrear.add(lblNewLabel_3);
 		
-		textField_3 = new JTextField();
-		textField_3.setBounds(230, 80, 122, 20);
-		panelCrear.add(textField_3);
-		textField_3.setColumns(10);
+		direccionCUTextField = new JTextField();
+		direccionCUTextField.setBounds(230, 80, 122, 20);
+		panelCrear.add(direccionCUTextField);
+		direccionCUTextField.setColumns(10);
 		
 		JLabel lblNewLabel_4 = new JLabel("DNI:");
 		lblNewLabel_4.setBounds(20, 108, 46, 14);
 		panelCrear.add(lblNewLabel_4);
 		
-		textField_4 = new JTextField();
-		textField_4.setBounds(65, 108, 86, 20);
-		panelCrear.add(textField_4);
-		textField_4.setColumns(10);
+		dniCUTextField = new JTextField();
+		dniCUTextField.setBounds(65, 108, 86, 20);
+		panelCrear.add(dniCUTextField);
+		dniCUTextField.setColumns(10);
 		
 		JLabel lblNewLabel_5 = new JLabel("Fecha:");
 		lblNewLabel_5.setBounds(174, 108, 46, 14);
 		panelCrear.add(lblNewLabel_5);
 		
-		textField_5 = new JTextField();
-		textField_5.setBounds(230, 108, 86, 20);
-		panelCrear.add(textField_5);
-		textField_5.setColumns(10);
+		fechaCUTextField = new JTextField();
+		fechaCUTextField.setBounds(230, 108, 86, 20);
+		panelCrear.add(fechaCUTextField);
+		fechaCUTextField.setColumns(10);
 		
-		JButton btnNewButton = new JButton("Enviar");
-		btnNewButton.setBounds(139, 157, 89, 23);
-		panelCrear.add(btnNewButton);
+		JButton botonCU = new JButton("Enviar");
+		botonCU.setBounds(139, 157, 89, 23);
+		panelCrear.add(botonCU);
 		
 		JLabel lblNewLabel_6 = new JLabel("Crear Usuario");
 		lblNewLabel_6.setFont(new Font("SansSerif", Font.BOLD, 16));
@@ -166,55 +166,55 @@ public class Vista extends JFrame {
 		lblNewLabel_7.setBounds(160, 15, 25, 14);
 		panelActualizar.add(lblNewLabel_7);
 		
-		textField_6 = new JTextField();
-		textField_6.setColumns(10);
-		textField_6.setBounds(184, 12, 54, 20);
-		panelActualizar.add(textField_6);
+		idAUTextField = new JTextField();
+		idAUTextField.setColumns(10);
+		idAUTextField.setBounds(184, 12, 54, 20);
+		panelActualizar.add(idAUTextField);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("Nombre:");
 		lblNewLabel_1_1.setBounds(10, 46, 61, 14);
 		panelActualizar.add(lblNewLabel_1_1);
 		
-		textField_7 = new JTextField();
-		textField_7.setColumns(10);
-		textField_7.setBounds(65, 43, 86, 20);
-		panelActualizar.add(textField_7);
+		nombreAUTextField = new JTextField();
+		nombreAUTextField.setColumns(10);
+		nombreAUTextField.setBounds(65, 43, 86, 20);
+		panelActualizar.add(nombreAUTextField);
 		
 		JLabel lblNewLabel_2_1 = new JLabel("Apellido:");
 		lblNewLabel_2_1.setBounds(170, 46, 56, 14);
 		panelActualizar.add(lblNewLabel_2_1);
 		
-		textField_8 = new JTextField();
-		textField_8.setColumns(10);
-		textField_8.setBounds(230, 43, 86, 20);
-		panelActualizar.add(textField_8);
+		apellidoAUTextField = new JTextField();
+		apellidoAUTextField.setColumns(10);
+		apellidoAUTextField.setBounds(230, 43, 86, 20);
+		panelActualizar.add(apellidoAUTextField);
 		
 		JLabel lblNewLabel_3_1 = new JLabel("Direccion:");
 		lblNewLabel_3_1.setBounds(10, 71, 61, 14);
 		panelActualizar.add(lblNewLabel_3_1);
 		
-		textField_9 = new JTextField();
-		textField_9.setColumns(10);
-		textField_9.setBounds(75, 68, 86, 20);
-		panelActualizar.add(textField_9);
+		direccionAUTextField = new JTextField();
+		direccionAUTextField.setColumns(10);
+		direccionAUTextField.setBounds(75, 68, 86, 20);
+		panelActualizar.add(direccionAUTextField);
 		
 		JLabel lblNewLabel_4_1 = new JLabel("DNI:");
 		lblNewLabel_4_1.setBounds(170, 71, 46, 14);
 		panelActualizar.add(lblNewLabel_4_1);
 		
-		textField_10 = new JTextField();
-		textField_10.setColumns(10);
-		textField_10.setBounds(230, 68, 86, 20);
-		panelActualizar.add(textField_10);
+		dniAUTextField = new JTextField();
+		dniAUTextField.setColumns(10);
+		dniAUTextField.setBounds(230, 68, 86, 20);
+		panelActualizar.add(dniAUTextField);
 		
 		JLabel lblNewLabel_5_1 = new JLabel("Fecha:");
 		lblNewLabel_5_1.setBounds(10, 102, 46, 14);
 		panelActualizar.add(lblNewLabel_5_1);
 		
-		textField_11 = new JTextField();
-		textField_11.setColumns(10);
-		textField_11.setBounds(65, 99, 86, 20);
-		panelActualizar.add(textField_11);
+		fechaAUTextField = new JTextField();
+		fechaAUTextField.setColumns(10);
+		fechaAUTextField.setBounds(65, 99, 86, 20);
+		panelActualizar.add(fechaAUTextField);
 		
 		JButton btnNewButton_2 = new JButton("Actualizar");
 		btnNewButton_2.setBounds(137, 151, 101, 23);
@@ -234,10 +234,10 @@ public class Vista extends JFrame {
 		lblNewLabel_7_1.setBounds(10, 46, 25, 14);
 		panelBorrar.add(lblNewLabel_7_1);
 		
-		textField_12 = new JTextField();
-		textField_12.setColumns(10);
-		textField_12.setBounds(34, 43, 54, 20);
-		panelBorrar.add(textField_12);
+		idBUTextField = new JTextField();
+		idBUTextField.setColumns(10);
+		idBUTextField.setBounds(34, 43, 54, 20);
+		panelBorrar.add(idBUTextField);
 		
 		JButton btnNewButton_3 = new JButton("Borrar");
 		btnNewButton_3.setBounds(133, 144, 89, 23);
