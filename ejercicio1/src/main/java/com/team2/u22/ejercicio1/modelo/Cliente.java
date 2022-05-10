@@ -21,9 +21,9 @@ public class Cliente extends ServicioBD{
 	private int id;
 	private String nombre;
 	private String apellido;
-	private String dirección;
+	private String direccion;
 	private int dni;
-	private Date fecha;
+	private String fecha;
 	
 	/**
 	 * @param nombre
@@ -32,11 +32,11 @@ public class Cliente extends ServicioBD{
 	 * @param dni
 	 * @param fecha
 	 */
-	public Cliente(String nombre, String apellido, String dirección, int dni, Date fecha) {
+	public Cliente(String nombre, String apellido, String dirección, int dni, String fecha) {
 		super();
 		this.nombre = nombre;
 		this.apellido = apellido;
-		this.dirección = dirección;
+		this.direccion = dirección;
 		this.dni = dni;
 		this.fecha = fecha;
 	}
@@ -80,13 +80,13 @@ public class Cliente extends ServicioBD{
 	 * @return the dirección
 	 */
 	public String getDirección() {
-		return dirección;
+		return direccion;
 	}
 	/**
 	 * @param dirección the dirección to set
 	 */
 	public void setDirección(String dirección) {
-		this.dirección = dirección;
+		this.direccion = dirección;
 	}
 	/**
 	 * @return the dni
@@ -103,13 +103,13 @@ public class Cliente extends ServicioBD{
 	/**
 	 * @return the fecha
 	 */
-	public Date getFecha() {
+	public String getFecha() {
 		return fecha;
 	}
 	/**
 	 * @param fecha the fecha to set
 	 */
-	public void setFecha(Date fecha) {
+	public void setFecha(String fecha) {
 		this.fecha = fecha;
 	}
 	@Override
@@ -118,10 +118,10 @@ public class Cliente extends ServicioBD{
 		super.usarBaseDatos(nombreBaseDatos);
 	}
 	@Override
-	public void crearRegistro(String nombreBaseDatos, String tabla, Object cliente) {
+	public void crearRegistro(String nombreBaseDatos, String tabla, String cliente) {
 		nombreBaseDatos = "ud22_ejercicios_db_clientes";
 		tabla = "cliente";
-		super.crearRegistro(nombreBaseDatos, tabla, this);
+		super.crearRegistro(nombreBaseDatos, tabla, this.toString());
 	}
 	@Override
 	public String leerTablaBaseDatos(String nombreBaseDatos, String tabla, int numeroAtributos) {
@@ -140,8 +140,8 @@ public class Cliente extends ServicioBD{
 	}
 	@Override
 	public String toString() {
-		return "(" + nombre + ", " + apellido + ", " + dirección + ", " + dni
-				+ ", " + fecha + ")";
+		return "(default ,'" + nombre + "', '" + apellido + "', '" + direccion + "', " + dni
+				+ ", '" + fecha + "')";
 	}
 	
 	
