@@ -23,7 +23,7 @@ public class Cliente extends ServicioBD{
 	private String apellido;
 	private String dirección;
 	private int dni;
-	private Date fecha;
+	private String fecha;
 	
 	/**
 	 * @param nombre
@@ -32,7 +32,7 @@ public class Cliente extends ServicioBD{
 	 * @param dni
 	 * @param fecha
 	 */
-	public Cliente(String nombre, String apellido, String dirección, int dni, Date fecha) {
+	public Cliente(String nombre, String apellido, String dirección, int dni, String fecha) {
 		super();
 		this.nombre = nombre;
 		this.apellido = apellido;
@@ -103,13 +103,13 @@ public class Cliente extends ServicioBD{
 	/**
 	 * @return the fecha
 	 */
-	public Date getFecha() {
+	public String getFecha() {
 		return fecha;
 	}
 	/**
 	 * @param fecha the fecha to set
 	 */
-	public void setFecha(Date fecha) {
+	public void setFecha(String fecha) {
 		this.fecha = fecha;
 	}
 	@Override
