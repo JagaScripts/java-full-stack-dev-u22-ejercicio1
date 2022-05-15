@@ -1,6 +1,10 @@
 package com.team2.u22.ejercicio1;
 
+import java.awt.EventQueue;
+
+import com.team2.u22.ejercicio1.controlador.ClienteControler;
 import com.team2.u22.ejercicio1.modelo.Cliente;
+import com.team2.u22.ejercicio1.vista.Vista;
 
 /**
  * 
@@ -16,17 +20,19 @@ public class App
 {
     public static void main( String[] args )
     {
-    	/*
+    	
     	EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
 					Vista frame = new Vista();
 					frame.setVisible(true);
+					
+					ClienteControler cc = new ClienteControler(null, frame);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
-		});*/
+		});
     	
     	Cliente cliente = new Cliente("Jose","González","Avd Carrasco n 5", 12345678,"1982-05-23");
     	//cliente.crearRegistro("ud22_ejercicios_db_clientes", "cliente", cliente);
