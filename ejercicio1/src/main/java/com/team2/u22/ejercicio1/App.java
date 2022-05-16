@@ -26,17 +26,18 @@ public class App
 				try {
 					Vista frame = new Vista();
 					frame.setVisible(true);
-					
-					ClienteControler cc = new ClienteControler(null, frame);
+					Cliente cliente = new Cliente();
+					ClienteControler cc = new ClienteControler(cliente, frame);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
 		});
     	
-    	Cliente cliente = new Cliente("Jose","González","Avd Carrasco n 5", 12345678,"1982-05-23");
+    
+    	
     	//cliente.crearRegistro("ud22_ejercicios_db_clientes", "cliente", cliente);
-        System.out.println( "Hello World! " + cliente.toString());
-        cliente.cerrarConexion();
+       // System.out.println( "Hello World! " + cliente.toString());
+        //cliente.cerrarConexion();
     }
 }

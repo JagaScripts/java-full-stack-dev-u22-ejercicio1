@@ -27,7 +27,6 @@ import java.awt.event.ActionEvent;
 public class Vista extends JFrame {
 
 	public JPanel contentPane;
-	public JTextField idCUTextField;
 	public JTextField nombreCUTextField;
 	public JTextField apellidoCUTextField;
 	public JTextField direccionCUTextField;
@@ -40,6 +39,7 @@ public class Vista extends JFrame {
 	public JTextField dniAUTextField;
 	public JTextField fechaAUTextField;
 	public JTextField idBUTextField;
+	public JTextArea textArea;
 
 	public JButton botonCU;
 	public JButton botonAU;
@@ -62,21 +62,12 @@ public class Vista extends JFrame {
 		contentPane.add(panelCrear);
 		panelCrear.setLayout(null);
 
-		idCUTextField = new JTextField();
-		idCUTextField.setBounds(44, 52, 54, 20);
-		panelCrear.add(idCUTextField);
-		idCUTextField.setColumns(10);
-
-		JLabel lblNewLabel = new JLabel("Id:");
-		lblNewLabel.setBounds(20, 55, 25, 14);
-		panelCrear.add(lblNewLabel);
-
 		JLabel lblNewLabel_1 = new JLabel("Nombre:");
-		lblNewLabel_1.setBounds(108, 55, 61, 14);
+		lblNewLabel_1.setBounds(10, 55, 61, 14);
 		panelCrear.add(lblNewLabel_1);
 
 		nombreCUTextField = new JTextField();
-		nombreCUTextField.setBounds(179, 52, 122, 20);
+		nombreCUTextField.setBounds(65, 52, 122, 20);
 		panelCrear.add(nombreCUTextField);
 		nombreCUTextField.setColumns(10);
 
@@ -130,7 +121,7 @@ public class Vista extends JFrame {
 		contentPane.add(panelLeer);
 		panelLeer.setLayout(null);
 
-		JTextArea textArea = new JTextArea();
+		textArea = new JTextArea();
 		textArea.setBounds(10, 41, 332, 124);
 		panelLeer.add(textArea);
 

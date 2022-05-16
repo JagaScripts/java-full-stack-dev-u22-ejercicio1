@@ -32,6 +32,9 @@ public class Cliente extends ServicioBD{
 	 * @param dni
 	 * @param fecha
 	 */
+	public Cliente() {
+	}
+	
 	public Cliente(String nombre, String apellido, String dirección, int dni, String fecha) {
 		super();
 		this.nombre = nombre;

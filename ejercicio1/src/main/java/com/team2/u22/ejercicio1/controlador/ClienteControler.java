@@ -35,6 +35,9 @@ public class ClienteControler implements ActionListener {
 
 		// Boton de Crear Usuario
 		this.vista.botonCU.addActionListener(this);
+		this.vista.botonFU.addActionListener(this);
+		this.vista.botonBU.addActionListener(this);
+		this.vista.botonAU.addActionListener(this);
 	}
 
 	@Override
@@ -45,37 +48,65 @@ public class ClienteControler implements ActionListener {
 		String direccion = null;
 		int dni = 0;
 		String fecha = null;
-
+		
 		if (this.vista.botonCU == e.getSource()) {
 			try {
-
+				boolean campoVacio = false;
+				
 				if (!"".equals(this.vista.nombreCUTextField.getText())) {
 					nombre = this.vista.nombreCUTextField.getText();
+				}else {
+					campoVacio = true;
 				}
 
 				if (!"".equals(this.vista.apellidoCUTextField.getText())) {
 					apellido = this.vista.apellidoCUTextField.getText();
+				}else {
+					campoVacio = true;
 				}
 
 				if (!"".equals(this.vista.direccionCUTextField.getText())) {
 					direccion = this.vista.direccionCUTextField.getText();
+				}else {
+					campoVacio = true;
 				}
 
 				if (!"".equals(this.vista.dniCUTextField.getText())) {
 					dni = Integer.parseInt(this.vista.dniCUTextField.getText());
+				}else {
+					campoVacio = true;
 				}
 
 				if (!"".equals(this.vista.fechaCUTextField.getText())) {
 					fecha = this.vista.fechaCUTextField.getText();
+					
+				}else {
+					campoVacio = true;
+					
 				}
 
-				cliente = new Cliente(nombre, apellido, direccion, dni, fecha);
+				if(!campoVacio) {
+					cliente = new Cliente(nombre, apellido, direccion, dni, fecha);
+					cliente.actualizarRegistro("ud22_ejercicios_db_clientes", "cliente", "Joan", vista.idAUTextField.getText());
+				}
+			
 				System.out.println(cliente);
 
 			} catch (Exception e2) {
-				// TODO: handle exception
-				JOptionPane.showMessageDialog(vista, "Error");
+				
+				JOptionPane.showMessageDialog(null, "Error");
 			}
+		}else if(this.vista.botonFU == e.getSource()) {
+			
+			vista.textArea.setText(cliente.leerTablaBaseDatos("ud22_ejercicios_db_clientes", "cliente", 6));
+			
+		}else if(this.vista.botonAU == e.getSource()) {
+			
+			
+		}else if(this.vista.botonBU == e.getSource()) {
+			
+			cliente.eliminarRegistro("ud22_ejercicios_db_clientes", "cliente","id = " + vista.idBUTextField.getText());
+			
 		}
 
 	}

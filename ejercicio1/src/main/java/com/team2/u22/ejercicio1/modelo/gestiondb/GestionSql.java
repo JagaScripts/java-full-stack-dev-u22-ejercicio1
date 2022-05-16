@@ -16,7 +16,7 @@ import java.util.logging.Logger;
 public class GestionSql {
 	
 	 	private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
-	    private static final String SERVER = "jdbc:mysql://192.168.1.13:3306/";
+	    private static final String SERVER = "jdbc:mysql://192.168.1.40:3306/";
 	    //private static final String DATABASE = "actividades";
 	    private static final String USERNAME = "remote";
 	    private static final String PASSWORD = "Reus_2022";
