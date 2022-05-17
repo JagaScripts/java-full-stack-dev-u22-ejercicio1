@@ -44,11 +44,11 @@ public class ClienteControler implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
-		String nombre = null;
-		String apellido = null;
-		String direccion = null;
+		String nombre = "";
+		String apellido = "";
+		String direccion = "";
 		int dni = 0;
-		String fecha = null;
+		String fecha = "";
 
 		// Crear Usuario
 		if (this.vista.botonCU == e.getSource()) {
@@ -72,8 +72,6 @@ public class ClienteControler implements ActionListener {
 
 				if (!"".equals(this.vista.fechaCUTextField.getText())) {
 					fecha = this.vista.fechaCUTextField.getText();
-				} else {
-					fecha = "NOW()";
 				}
 
 				cliente = new Cliente(nombre, apellido, direccion, dni, fecha.toString());
@@ -97,31 +95,31 @@ public class ClienteControler implements ActionListener {
 			if (!"".equals(vista.nombreAUTextField.getText())) {
 				String actualizarNombre = "nombre = '" + vista.nombreAUTextField.getText() + "'";
 				cliente.actualizarRegistro("ud22_ejercicios_db_clientes", "cliente", actualizarNombre,
-						vista.idAUTextField.getText());
+						"id = " + vista.idAUTextField.getText());
 			}
 
 			if (!"".equals(vista.apellidoAUTextField.getText())) {
 				String actualizarApellido = "apellido = '" + vista.apellidoAUTextField.getText() + "'";
 				cliente.actualizarRegistro("ud22_ejercicios_db_clientes", "cliente", actualizarApellido,
-						vista.idAUTextField.getText());
+						"id = " + vista.idAUTextField.getText());
 			}
 
 			if (!"".equals(vista.direccionAUTextField.getText())) {
 				String actualizarDireccion = "direccion = '" + vista.direccionAUTextField.getText() + "'";
 				cliente.actualizarRegistro("ud22_ejercicios_db_clientes", "cliente", actualizarDireccion,
-						vista.idAUTextField.getText());
+						"id = " + vista.idAUTextField.getText());
 			}
 
 			if (!"".equals(vista.dniAUTextField.getText())) {
 				String actualizarDni = "dni = '" + vista.dniAUTextField.getText() + "'";
 				cliente.actualizarRegistro("ud22_ejercicios_db_clientes", "cliente", actualizarDni,
-						vista.idAUTextField.getText());
+						"id = " + vista.idAUTextField.getText());
 			}
 
 			if (!"".equals(vista.fechaAUTextField.getText())) {
 				String actualizarFecha = "fecha = '" + vista.fechaAUTextField.getText() + "'";
 				cliente.actualizarRegistro("ud22_ejercicios_db_clientes", "cliente", actualizarFecha,
-						vista.idAUTextField.getText());
+						"id = " + vista.idAUTextField.getText());
 			}
 
 			// Borrar Usuario

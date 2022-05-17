@@ -144,12 +144,37 @@ public class Cliente extends ServicioBD{
 	@Override
 	public String toString() {
 		
-		if(!this.nombre.equals(null)) {
-			this.nombre = "'" + this.nombre + "'";
+		String nombreAux;
+		String apellidoAux;
+		String direccionAux;
+		String fechaAux;
+		
+		if(!this.nombre.equals("")) {
+			nombreAux = "'" + this.nombre + "'";
+		}else {
+			nombreAux = null;
 		}
 		
-		return "(default ," + nombre + ", " + apellido + ", " + direccion + ", " + dni
-				+ ", " + fecha + ")";
+		if(!this.apellido.equals("")) {
+			apellidoAux = "'" + this.apellido + "'";
+		}else {
+			apellidoAux = null;
+		}
+		
+		if(!this.direccion.equals("")) {
+			direccionAux = "'" + this.direccion + "'";
+		}else {
+			direccionAux = null;
+		}
+		
+		if(!this.fecha.equals("")) {
+			fechaAux = "'" + this.fecha + "'";
+		}else {
+			fechaAux = "NOW()";
+		}
+		
+		return "(default ," + nombreAux + ", " + apellidoAux + ", " + direccionAux + ", " + dni
+				+ ", " + fechaAux + ")";
 	}
 	
 	
