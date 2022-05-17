@@ -143,8 +143,13 @@ public class Cliente extends ServicioBD{
 	}
 	@Override
 	public String toString() {
-		return "(default ,'" + nombre + "', '" + apellido + "', '" + direccion + "', " + dni
-				+ ", '" + fecha + "')";
+		
+		if(!this.nombre.equals(null)) {
+			this.nombre = "'" + this.nombre + "'";
+		}
+		
+		return "(default ," + nombre + ", " + apellido + ", " + direccion + ", " + dni
+				+ ", " + fecha + ")";
 	}
 	
 	
