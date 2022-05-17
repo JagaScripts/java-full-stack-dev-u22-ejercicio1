@@ -49,7 +49,6 @@ public class ServicioBD implements IObjetoAccesoDatos{
 			
 		} catch (SQLException e) {
 			System.out.println("No se ha podido usar la base de datos " + nombreBaseDatos);
-			e.printStackTrace();
 		}
 		
 	}
@@ -66,7 +65,6 @@ public class ServicioBD implements IObjetoAccesoDatos{
 
 		} catch (Exception e) {
 			System.out.println("No se ha podido crear registros la Base de datos " + nombreBaseDatos);
-			e.printStackTrace();
 		}
 		
 	}
@@ -99,7 +97,6 @@ public class ServicioBD implements IObjetoAccesoDatos{
 
 		} catch (Exception e) {
 			System.out.println("No se ha podido leer la Tabla " + tabla + " de la Base de datos " + nombreBaseDatos);
-			e.printStackTrace();
 		}
 		return resultadoConsulta;
 		
@@ -115,7 +112,6 @@ public class ServicioBD implements IObjetoAccesoDatos{
 
 		} catch (Exception e) {
 			System.out.println("No se ha podido crear registros la Base de datos " + nombreBaseDatos);
-			e.printStackTrace();
 		}
 		
 	}

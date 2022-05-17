@@ -103,6 +103,7 @@ public class Vista extends JFrame {
 		panelCrear.add(lblNewLabel_5);
 
 		fechaCUTextField = new JTextField();
+		fechaCUTextField.setToolTipText("Formato de fecha yyyy-MM-dd");
 		fechaCUTextField.setBounds(230, 108, 86, 20);
 		panelCrear.add(fechaCUTextField);
 		fechaCUTextField.setColumns(10);
@@ -115,6 +116,10 @@ public class Vista extends JFrame {
 		lblNewLabel_6.setFont(new Font("SansSerif", Font.BOLD, 16));
 		lblNewLabel_6.setBounds(20, 11, 106, 21);
 		panelCrear.add(lblNewLabel_6);
+		
+		JLabel lblNewLabel = new JLabel("Formato de fecha yyyy-MM-dd");
+		lblNewLabel.setBounds(167, 133, 175, 14);
+		panelCrear.add(lblNewLabel);
 
 		JPanel panelLeer = new JPanel();
 		panelLeer.setBounds(416, 49, 352, 205);
@@ -194,6 +199,7 @@ public class Vista extends JFrame {
 		panelActualizar.add(lblNewLabel_5_1);
 
 		fechaAUTextField = new JTextField();
+		fechaAUTextField.setToolTipText("Formato de fecha yyyy-MM-dd");
 		fechaAUTextField.setColumns(10);
 		fechaAUTextField.setBounds(65, 99, 86, 20);
 		panelActualizar.add(fechaAUTextField);
@@ -201,6 +207,10 @@ public class Vista extends JFrame {
 		botonAU = new JButton("Actualizar");
 		botonAU.setBounds(137, 151, 101, 23);
 		panelActualizar.add(botonAU);
+		
+		JLabel lblNewLabel_8 = new JLabel("Formato de fecha yyyy-MM-dd");
+		lblNewLabel_8.setBounds(10, 127, 175, 14);
+		panelActualizar.add(lblNewLabel_8);
 
 		JPanel panelBorrar = new JPanel();
 		panelBorrar.setBounds(390, 239, 352, 205);

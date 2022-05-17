@@ -3,9 +3,11 @@ package com.team2.u22.ejercicio1.controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Date;
+import java.text.SimpleDateFormat;
 
 import javax.swing.JOptionPane;
 
+import com.mysql.cj.jdbc.exceptions.MysqlDataTruncation;
 import com.team2.u22.ejercicio1.modelo.Cliente;
 import com.team2.u22.ejercicio1.vista.Vista;
 
@@ -49,6 +51,7 @@ public class ClienteControler implements ActionListener {
 		String direccion = "";
 		int dni = 0;
 		String fecha = "";
+		
 
 		// Crear Usuario
 		if (this.vista.botonCU == e.getSource()) {
@@ -71,7 +74,12 @@ public class ClienteControler implements ActionListener {
 				}
 
 				if (!"".equals(this.vista.fechaCUTextField.getText())) {
-					fecha = this.vista.fechaCUTextField.getText();
+					if(this.vista.fechaCUTextField.getText().matches("\\d{4}-\\d{2}-\\d{2}")) {
+						fecha = this.vista.fechaCUTextField.getText();
+					}else {
+						throw new Exception("Introduce un formato de fecha correcto");
+					}
+								
 				}
 
 				cliente = new Cliente(nombre, apellido, direccion, dni, fecha.toString());
@@ -92,6 +100,7 @@ public class ClienteControler implements ActionListener {
 			// Actualizar Usuario
 		} else if (this.vista.botonAU == e.getSource()) {
 
+			try {
 			if (!"".equals(vista.nombreAUTextField.getText())) {
 				String actualizarNombre = "nombre = '" + vista.nombreAUTextField.getText() + "'";
 				cliente.actualizarRegistro("ud22_ejercicios_db_clientes", "cliente", actualizarNombre,
@@ -117,9 +126,19 @@ public class ClienteControler implements ActionListener {
 			}
 
 			if (!"".equals(vista.fechaAUTextField.getText())) {
-				String actualizarFecha = "fecha = '" + vista.fechaAUTextField.getText() + "'";
-				cliente.actualizarRegistro("ud22_ejercicios_db_clientes", "cliente", actualizarFecha,
-						"id = " + vista.idAUTextField.getText());
+				if(this.vista.fechaAUTextField.getText().matches("\\d{4}-\\d{2}-\\d{2}")) {
+					String actualizarFecha = "fecha = '" + vista.fechaAUTextField.getText() + "'";
+					cliente.actualizarRegistro("ud22_ejercicios_db_clientes", "cliente", actualizarFecha,
+							"id = " + vista.idAUTextField.getText());
+				}else {
+					throw new Exception("Introduce un formato de fecha correcto");
+				}
+				
+			}
+			}catch (Exception ex) {
+			
+				JOptionPane.showMessageDialog(null, ex.getMessage());
+				
 			}
 
 			// Borrar Usuario
